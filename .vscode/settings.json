@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["Behance", "codedamn", "Dribbble"]
+  "cSpell.words": ["Behance", "codedamn", "Dribbble"],
+  "css.lint.unknownAtRules": "ignore"
 }
