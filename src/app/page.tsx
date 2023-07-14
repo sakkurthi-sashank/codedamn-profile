@@ -100,7 +100,7 @@ export default function HomePage() {
           </div>
         </div>
         <p className="text-gray-500 antialiased">
-          Full stack dev at codedamn | Harvard&apos;22"
+          Full stack dev at codedamn | Harvard&apos;22&apos;
         </p>
         <div className="flex items-center text-gray-500">
           <IoLocationOutline className="mr-1 inline-block antialiased" />

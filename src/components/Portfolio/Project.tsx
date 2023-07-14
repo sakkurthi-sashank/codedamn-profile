@@ -102,7 +102,7 @@ export const Projects = () => {
 
               <div className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
                 {project.technology.map((tech) => (
-                  <div className="flex items-center gap-1">
+                  <div className="flex items-center gap-1" key={tech.id}>
                     <Image
                       src={tech.icon}
                       width={20}

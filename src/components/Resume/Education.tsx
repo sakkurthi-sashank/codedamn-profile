@@ -25,7 +25,10 @@ export const Education = () => {
         Education
       </h2>
       {EducationData.map((education) => (
-        <article className="flex w-full items-start space-x-5 space-y-4 rounded-lg bg-gray-50 p-5">
+        <article
+          key={education.school}
+          className="flex w-full items-start space-x-5 space-y-4 rounded-lg bg-gray-50 p-5"
+        >
           <Image
             src={education.icon}
             alt="University Icon"

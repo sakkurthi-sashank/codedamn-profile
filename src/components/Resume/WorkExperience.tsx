@@ -37,7 +37,10 @@ export const WorkExperience = () => {
         Work experience
       </h2>
       {WorkExperienceData.map((workExperience) => (
-        <div className="flex w-full space-x-5 space-y-4 rounded-lg bg-gray-50 p-5">
+        <div
+          className="flex w-full space-x-5 space-y-4 rounded-lg bg-gray-50 p-5"
+          key={workExperience.company}
+        >
           <div className="mt-6 flex">{workExperience.icon}</div>
           <div className="flex flex-col space-y-5">
             <div className="space-y-2">
@@ -57,7 +60,10 @@ export const WorkExperience = () => {
                 <h4 className="font-medium">Job responsibilities:</h4>
                 <ul className="space-y-1 text-sm text-gray-600 antialiased">
                   {workExperience.responsibilities.map((responsibility) => (
-                    <li className="flex items-center space-x-2">
+                    <li
+                      className="flex items-center space-x-2"
+                      key={responsibility}
+                    >
                       <BsFillDiamondFill className="inline-block h-2 w-2 text-indigo-500" />
                       <span>{responsibility}</span>
                     </li>
