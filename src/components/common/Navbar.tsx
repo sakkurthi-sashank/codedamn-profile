@@ -1,41 +1,43 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { FiChrome } from "react-icons/fi";
 
-const navLink = [
+const navLinks = [
   {
     label: "Profile",
-    href: "/profile",
+    href: "/edit/profile",
   },
   {
     label: "Socials",
-    href: "/socials",
+    href: "/edit/socials",
   },
   {
     label: "Portfolio",
-    href: "/portfolio",
+    href: "/edit/portfolio",
   },
   {
     label: "Resume",
-    href: "/resume",
+    href: "/edit/resume",
   },
 ];
 
 export const Navbar = () => {
   const path = usePathname();
+  const router = useRouter();
 
   return (
     <div className="h-fit w-72 max-w-xs space-y-10 rounded-2xl border bg-gray-50 p-6">
-      {navLink.map((value) => (
+      {navLinks.map((navLink) => (
         <div
           className={`flex cursor-pointer items-center space-x-3 text-gray-500 hover:text-gray-900 ${
-            path === value.href ? "text-gray-900" : ""
+            path === navLink.href ? "text-gray-900" : ""
           }`}
-          key={value.label}
+          onClick={() => router.push(navLink.href)}
+          key={navLink.label}
         >
           <FiChrome className="text-2xl" />
-          <span className="text-lg font-medium">{value.label}</span>
+          <span className="text-lg font-medium">{navLink.label}</span>
         </div>
       ))}
     </div>

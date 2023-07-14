@@ -1,15 +1,12 @@
 "use client";
 
-import { InputField } from "@/components/UI/InputField";
+import { InputField } from "@/components/common/InputField";
 import Image from "next/image";
-import { Switch } from "@headlessui/react";
-import { useState } from "react";
-import { ProfileVisibility } from "@/components/ProfileVisibility";
+import { ProfileVisibility } from "@/components/ProfileEdit/ProfileVisibility";
 
 export default function Page() {
-  const [enabled, setEnabled] = useState(false);
   return (
-    <div className="w-3/5 space-y-4">
+    <div className="w-full max-w-4xl space-y-4">
       <div className="flex items-center space-x-4">
         <Image
           src={"/images/profile-photo.svg"}

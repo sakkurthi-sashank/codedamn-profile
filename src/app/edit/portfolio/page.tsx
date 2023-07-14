@@ -1,6 +1,5 @@
-import { PortfolioPlaygroundCard } from "@/components/PortfolioPlaygroundCard";
-import { ProjectsCard } from "@/components/ProjectsCard";
-import Image from "next/image";
+import { PortfolioPlaygroundCard } from "@/components/PortfolioEdit/PortfolioPlaygroundCard";
+import { ProjectsCard } from "@/components/PortfolioEdit/ProjectsCard";
 
 export default function Page() {
   return (

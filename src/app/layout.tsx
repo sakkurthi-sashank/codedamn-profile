@@ -1,9 +1,9 @@
-import { TheHeader } from "@/components/TheHeader";
+import { TheHeader } from "@/components/common/TheHeader";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "codedamn | portfolio",
@@ -17,7 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.variable}>
+      <body
+        style={{
+          fontFamily: inter.style.fontFamily,
+        }}
+      >
         <TheHeader />
         {children}
       </body>

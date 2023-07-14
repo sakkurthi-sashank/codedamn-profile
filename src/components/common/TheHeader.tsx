@@ -1,10 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import { AiOutlineSearch } from "react-icons/ai";
 import { HiBolt } from "react-icons/hi2";
 import { IoNotificationsOutline } from "react-icons/io5";
-import { InputField } from "./UI/InputField";
+import { InputField } from "./InputField";
+import { useRouter } from "next/navigation";
 
 export const TheHeader = () => {
+  const router = useRouter();
+
   return (
     <div className="flex h-20 items-center justify-between px-6">
       <div className="w-full">
@@ -14,6 +19,8 @@ export const TheHeader = () => {
           width={120}
           height={120}
           priority={false}
+          className="cursor-pointer"
+          onClick={() => router.push("/")}
         />
       </div>
 
