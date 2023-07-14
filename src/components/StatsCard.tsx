@@ -10,7 +10,7 @@ export const StatsCard = ({
   subtitle: string;
 }) => {
   return (
-    <div className="flex w-full max-w-sm space-x-3 rounded-lg bg-gray-50 border border-gray-100 p-3">
+    <div className="flex w-full max-w-sm space-x-3 rounded-lg border border-gray-100 bg-gray-50 p-3">
       <div>
         <Image src={imgSrc} alt="Lightning" width={50} height={50} />
       </div>

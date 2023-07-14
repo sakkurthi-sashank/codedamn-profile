@@ -1,22 +1,10 @@
 import Image from "next/image";
 
-export const PortfolioPlaygroundCard = ({
-  isActive,
-}: {
-  isActive?: boolean;
-}) => {
+export const PlaygroundCard = () => {
   return (
     <div
-      className={`relative flex max-w-sm items-center justify-around rounded-md px-3 py-5 ${
-        isActive ? "border-2 border-indigo-500 bg-indigo-50 " : "bg-gray-100"
-      }`}
+      className={`relative flex max-w-sm items-center justify-around rounded-md bg-gray-100 px-3 py-5`}
     >
-      <div
-        className={`absolute right-2.5 top-2.5 h-4 w-4 rounded-full bg-white ${
-          isActive ? "border-4 border-indigo-500" : "border border-gray-200"
-        }`}
-      ></div>
-
       <div>
         <Image
           src={"/icons/html-icon.svg"}

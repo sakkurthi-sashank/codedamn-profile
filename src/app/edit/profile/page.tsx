@@ -76,7 +76,7 @@ export default function Page() {
           Select which sections and content should show on your profile page.
         </span>
 
-        <div className="rounded-lg mt-4 bg-gray-50">
+        <div className="mt-4 rounded-lg bg-gray-50">
           <ProfileVisibility />
           <ProfileVisibility />
           <ProfileVisibility />
