@@ -42,11 +42,11 @@ export const Playground = () => {
           Create new Playground
         </div>
       </header>
-      <div className="grid grid-cols-2 gap-2 lg:gap-6">
+      <div className="grid grid-cols-1 place-items-center gap-2 sm:grid-cols-2 lg:gap-6">
         {PlaygroundData.map((playground) => (
           <article
             key={playground.id}
-            className={`relative flex max-w-sm flex-wrap items-center justify-around gap-2 rounded-md bg-gray-100 px-3 py-5`}
+            className={`relative flex w-full max-w-sm flex-wrap items-center justify-around gap-2 rounded-md bg-gray-100 px-3 py-5`}
           >
             <div>
               <Image

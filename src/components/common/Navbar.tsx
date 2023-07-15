@@ -27,7 +27,7 @@ export const Navbar = () => {
   const router = useRouter();
 
   return (
-    <div className="h-fit w-72 max-w-xs space-y-10 rounded-2xl border bg-gray-50 p-6">
+    <div className="hidden h-fit w-72 max-w-xs space-y-10 rounded-2xl border bg-gray-50 p-6 lg:block">
       {navLinks.map((navLink) => (
         <div
           className={`flex cursor-pointer items-center space-x-3 text-gray-500 hover:text-gray-900 ${

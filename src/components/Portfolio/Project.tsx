@@ -82,7 +82,7 @@ export const Projects = () => {
           Create new Project
         </div>
       </header>
-      <div className="grid grid-cols-2 gap-2 lg:gap-6">
+      <div className="grid grid-cols-1 place-items-center gap-2 sm:grid-cols-2 lg:gap-6">
         {ProjectData.map((project) => (
           <article
             key={project.id}

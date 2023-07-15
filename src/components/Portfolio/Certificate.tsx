@@ -38,11 +38,11 @@ export const Certificate = () => {
           Add new Certificate
         </div>
       </header>
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid w-full grid-cols-1 place-items-center gap-6 sm:grid-cols-2">
         {CertificateData.map((certificate) => (
           <article
             key={certificate.id}
-            className={`relative flex max-w-sm flex-col space-y-3 rounded-md bg-gray-100 px-4 py-5`}
+            className={`relative flex w-full max-w-sm flex-col space-y-3 rounded-md bg-gray-100 px-4 py-5`}
           >
             <div>
               <Image

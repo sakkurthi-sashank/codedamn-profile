@@ -6,7 +6,7 @@ export default function Page() {
     <div className="w-full max-w-4xl space-y-8">
       <div>
         <h2 className="text-2xl font-semibold text-gray-800">Playgrounds</h2>
-        <div className="mt-6 grid grid-cols-2 gap-10">
+        <div className="mt-6 grid w-full grid-cols-1 place-items-center gap-10 sm:grid-cols-2">
           <PortfolioPlaygroundCard isActive={true} />
           <PortfolioPlaygroundCard isActive={false} />
           <PortfolioPlaygroundCard isActive={false} />
@@ -15,7 +15,7 @@ export default function Page() {
       </div>
       <div className="w-full">
         <h2 className="text-2xl font-semibold text-gray-800">Projects</h2>
-        <div className="mt-6 grid w-full grid-cols-2 gap-10">
+        <div className="mt-6 grid w-full grid-cols-1 place-items-center gap-10 sm:grid-cols-2">
           <ProjectsCard isActive={true} />
           <ProjectsCard isActive={false} />
           <ProjectsCard isActive={false} />

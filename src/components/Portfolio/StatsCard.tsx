@@ -33,7 +33,7 @@ export const StatsCard = () => {
       <h3 className="py-4 text-xl font-semibold text-gray-800 lg:text-2xl">
         Stats
       </h3>
-      <div className="grid grid-cols-2 gap-2 lg:gap-6">
+      <div className="grid grid-cols-1 place-items-center gap-2 sm:grid-cols-2 lg:gap-6">
         {StatsCardData.map((statscard) => (
           <article
             key={statscard.id}

@@ -18,9 +18,10 @@ import { AboutMe } from "@/components/Resume/AboutMe";
 import { WorkExperience } from "@/components/Resume/WorkExperience";
 import { Education } from "@/components/Resume/Education";
 import { TechSkill } from "@/components/Resume/TechSkill";
-
+import { useRouter } from "next/navigation";
 import { Language } from "@/components/Resume/Language";
 import { Interests } from "@/components/Resume/ Interests";
+import { useEffect, useState } from "react";
 
 const techStack = [
   "HTML 5",
@@ -33,30 +34,54 @@ const techStack = [
   "Node.js",
 ];
 
-const socialMediaLinks = [
-  {
-    icon: <FcGoogle className="inline-block h-6 w-6" />,
-    color: "",
-  },
-  {
-    icon: <AiOutlineInstagram className="inline-block h-6 w-6" />,
-    color: "text-fuchsia-500",
-  },
-  {
-    icon: <BsFacebook className="inline-block h-6 w-6" />,
-    color: "text-blue-500",
-  },
-  {
-    icon: <AiFillLinkedin className="inline-block h-6 w-6" />,
-    color: "text-blue-500",
-  },
-  {
-    icon: <AiFillYoutube className="inline-block h-6 w-6" />,
-    color: "text-red-500",
-  },
-];
-
 export default function HomePage() {
+  const [socialMedia, setSocialMedia] = useState<
+    {
+      icon: JSX.Element;
+      color: string;
+      herf: string | null;
+    }[]
+  >([]);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    const linkedin = localStorage.getItem("profile-linkedin");
+
+    const facebook = localStorage.getItem("profile-facebook");
+    const instagram = localStorage.getItem("profile-instagram");
+
+    const socialMedia = [
+      {
+        icon: <FcGoogle className="inline-block h-6 w-6" />,
+        color: "",
+        herf: "",
+      },
+      {
+        icon: <AiOutlineInstagram className="inline-block h-6 w-6" />,
+        color: "text-fuchsia-500",
+        herf: instagram,
+      },
+      {
+        icon: <BsFacebook className="inline-block h-6 w-6" />,
+        color: "text-blue-500",
+        herf: facebook,
+      },
+      {
+        icon: <AiFillLinkedin className="inline-block h-6 w-6" />,
+        color: "text-blue-500",
+        herf: linkedin,
+      },
+      {
+        icon: <AiFillYoutube className="inline-block h-6 w-6" />,
+        color: "text-red-500",
+        herf: "",
+      },
+    ];
+
+    setSocialMedia(socialMedia);
+  }, []);
+
   return (
     <div className="mx-auto my-8 max-w-4xl px-3">
       <div className="relative">
@@ -120,10 +145,15 @@ export default function HomePage() {
 
         <div className="flex items-center justify-between px-3">
           <div className="flex flex-wrap gap-5 py-6">
-            {socialMediaLinks.map((socialMediaLink, index) => (
+            {socialMedia.map((socialMediaLink, index) => (
               <div
                 key={index}
-                className={`flex items-center justify-center rounded-lg border p-2 ${socialMediaLink.color}`}
+                onClick={() => {
+                  if (socialMediaLink.herf) {
+                    router.push(socialMediaLink.herf);
+                  }
+                }}
+                className={`flex cursor-pointer items-center justify-center rounded-lg border p-2 ${socialMediaLink.color}`}
               >
                 {socialMediaLink.icon}
               </div>

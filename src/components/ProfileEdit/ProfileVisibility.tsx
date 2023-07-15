@@ -1,22 +1,39 @@
-import { Switch } from "@headlessui/react";
-import { useState } from "react";
+"use client";
 
-export const ProfileVisibility = () => {
-  const [enabled, setEnabled] = useState(false);
+import { Switch } from "@headlessui/react";
+import { useEffect, useState } from "react";
+
+export const ProfileVisibility = ({
+  label,
+  description,
+}: {
+  label: string;
+  description: string;
+}) => {
+  const [enabled, setEnabled] = useState<boolean | null>(null);
+
+  const handleProfileVisibility = () => {
+    localStorage.setItem(`profile-visibility${label}`, `${!enabled}`);
+    setEnabled(!enabled);
+  };
+
+  useEffect(() => {
+    setEnabled(
+      localStorage.getItem(`profile-visibility${label}`) === "true"
+        ? true
+        : false,
+    );
+  }, []);
 
   return (
     <div className="flex w-full items-center justify-between p-4">
       <div>
-        <div className="text-base font-semibold text-gray-800">
-          Followers and following
-        </div>
-        <span className="text-sm text-gray-600">
-          Shows your followers and the users you follow on codedamn
-        </span>
+        <div className="text-base font-semibold text-gray-800">{label}</div>
+        <span className="text-sm text-gray-600">{description}</span>
       </div>
       <Switch
-        checked={enabled}
-        onChange={setEnabled}
+        checked={enabled!}
+        onChange={handleProfileVisibility}
         className={`${
           enabled ? "bg-blue-600" : "bg-gray-200"
         } relative inline-flex h-6 w-11 items-center rounded-full`}
